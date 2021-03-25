@@ -1,0 +1,15 @@
+##The following commands are used in bash
+
+##first step: md5sum the .gz files
+two files at once(forward and reverse) [being in the current directory, otherwise path required]
+
+$ md5sum S4_EDSW200019176-1a_HNKLWDSXY_L1_1.fq.gz S4_EDSW200019176-1a_HNKLWDSXY_L1_2.fq.gz
+
+##second step: use cat to compare the md5sum...gz file with the MD5.txt in order to make sure the file is not corrupted. This
+can be checked by comparing the codes below:
+
+$ cat MD5.txt
+
+##third step: checking the quality of the sequences using fastqc before trimming (this command will generate .html outputs for each file.)
+
+$ fastqc S4_EDSW200019176-1a_HNKLWDSXY_L1_1.fq.gz S4_EDSW200019176-1a_HNKLWDSXY_L1_2.fq.gz
